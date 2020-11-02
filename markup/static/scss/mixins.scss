@@ -1,0 +1,341 @@
+// Mixins.
+
+@mixin bebasik() {
+    font-family: "Febas Neue";
+}
+@mixin latosik() {
+    font-family: "Lato";
+}
+@mixin cursorBlack() {
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26 26" width="26" height="26"><g id="wrapper"><g id="group"><path id="internal" fill="%23222023" d="M10.16,13,13,10.16,15.84,13,13,15.84Z" /><path id="mid" fill="%23222023" d="M15.13,13,13,10.87,10.87,13,13,15.13,15.13,13m1.41,0L13,16.55,9.45,13,13,9.46Z" /><path id="external" fill="%23222023" d="M24.59,13,13,1.41,1.41,13,13,24.59,24.59,13M26,13,13,26,0,13,13,0Z" /></g></g></svg>') 13 13, default;
+    @supports (-ms-ime-align: auto) {
+        & {
+            cursor: default;
+        }
+    }
+    a,
+    button {
+        cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26 26" width="26" height="26"><g id="wrapper"><g id="group"><path id="external" fill="%23222023" d="M24.59,13,13,1.41,1.41,13,13,24.59,24.59,13M26,13,13,26,0,13,13,0Z" /><path id="mid" fill="%23222023" d="M19.86,13,13,6.14,6.14,13,13,19.86,19.86,13m1.41,0L13,21.27,4.73,13,13,4.73Z" /><path id="internal" fill="%23222023" d="M15.13,13,13,10.87,10.87,13,13,15.13,15.13,13m1.41,0L13,16.55,9.45,13,13,9.46Z" /></g></g></svg>')
+                13 13,
+            default;
+        @supports (-ms-ime-align: auto) {
+            & {
+                cursor: pointer;
+            }
+        }
+    }
+}
+@mixin rotateImageStyle() {
+    margin: 0px;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    @include media(
+        (
+            width: (
+                all: 490px,
+                1200: 45%,
+                768: 100%
+            ),
+            margin-bottom: (
+                all: 40px,
+                1200: 20px,
+                768: 30px
+            )
+        )
+    );
+    &:nth-child(odd) {
+        @include media(
+            (
+                margin-top: (
+                    all: 73px,
+                    1200: 30px,
+                    768: 0px
+                )
+            )
+        );
+    }
+    .is-scrolled &__wrapper {
+        transform: scale(0.9, 1);
+        will-change: transform;
+    }
+
+    &__wrapper {
+        width: 100%;
+        position: relative;
+        margin-left: 30px;
+        transition: transform 0.7s linear;
+        @include media(
+            (
+                height: (
+                    all: 590px,
+                    1200: 43vw,
+                    768: 90vw
+                ),
+                margin-bottom: (
+                    all: -100px,
+                    1200: -60px,
+                    768: -20px
+                ),
+                margin-left: (
+                    all: 30px,
+                    1200: 15px,
+                    768: 0px
+                )
+            )
+        );
+        &__canvas {
+            width: 200%;
+            height: 200%;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            position: absolute;
+            overflow: hidden;
+            pointer-events: none;
+            &__img {
+                width: 50%;
+                height: 50%;
+                box-shadow: 9px -9px 0px 0px rgb(34, 32, 35);
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: cover;
+                transition: transform 1s ease 0s;
+                transform: translate(-50%, -50%);
+                overflow: hidden;
+                transform-origin: 0% 0%;
+                &__light {
+                    position: absolute;
+                    left: 0%;
+                    top: 0%;
+                    width: 100%;
+                    height: 100%;
+                    transform: scale(2);
+                    z-index: 1;
+                    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0) 100%);
+                    opacity: 0;
+                    transition: opacity 0.2s;
+                }
+            }
+        }
+    }
+
+    &__title {
+        font-size: 50px;
+        font-weight: bold;
+        line-height: 1.38;
+        letter-spacing: 0.2px;
+        color: $sand;
+        @include bebasik();
+        pointer-events: none;
+        overflow: hidden;
+        position: relative;
+        z-index: 1;
+        @include media(
+            (
+                font-size: (
+                    all: 50px,
+                    1200: 30px
+                )
+            )
+        );
+    }
+    &__desc {
+        font-size: 14px;
+        line-height: 1.93;
+        letter-spacing: 0.8px;
+        color: rgb(255, 255, 255);
+        padding-right: 50px;
+        box-sizing: border-box;
+        pointer-events: none;
+        overflow: hidden;
+        position: relative;
+        z-index: 1;
+        @include media(
+            (
+                padding-right: (
+                    all: 50px,
+                    1200: 15px
+                )
+            )
+        );
+    }
+}
+
+// You can add your own mixins here:
+// source https://github.com/Dolgik89/-media-screen
+// https://github.com/Dolgik89/-media-screen/blob/master/_mixin.scss
+//********************
+//********************
+//********************
+// EXAMPLE
+// @import 'mixin';
+// .transition{
+//     transition: all .3s;
+// };
+// $width: 548;
+// body {
+//     @include media((
+//         margin: '10px 0',
+//         width: 100%,
+//         height: (all: 120px, 500-200: 100%, sm: 50%, 548: 10%, print: 10cm),
+//         font-size: (sm: 12px),
+//         extend: '.transition',
+//         transform: (lg: rotate(45deg)),
+//         background: (
+//                 lg: url('../images/pict.png') center center/cover no-repeat,
+//                 sm-lg: url('../images/pict1.png') center center/cover no-repeat
+//         )
+//     ));
+// }
+// You can add your own mixins here:
+$breakpoints: (
+    lg: 1024,
+    md: 768,
+    sm: 640
+) !default;
+$media-direction: max !default;
+
+@mixin css_property($property, $value) {
+    @if type_of($value) == string {
+        #{$property}: unquote($value);
+    } @else {
+        #{$property}: $value;
+    }
+}
+
+@function splitScreens($string, $seperator) {
+    $string: inspect(quote($string));
+    $sepId: str-index(quote($string), $seperator);
+    @if ($sepId) {
+        $array: (quote(str-slice($string, 0, $sepId - 1)), quote(str-slice($string, $sepId + 1)));
+        @return $array;
+    } @else {
+        @return $string;
+    }
+}
+//@media screen
+@mixin media($properties, $orientation: false) {
+    @each $property, $value in $properties {
+        @if type_of($value) == "map" {
+            @each $screen, $val in $value {
+                $screen: splitScreens($screen, "-");
+                @if type_of($screen) == "list" {
+                    $min_screen: nth($screen, 1);
+                    $max_screen: nth($screen, 2);
+                    @if $min_screen == min or $min_screen == max {
+                        $media-direction: $min_screen;
+                        @if $orientation {
+                            @if map-has-key($breakpoints, $max_screen) {
+                                @media only screen and (#{$media-direction}-width: map-get($breakpoints, $max_screen) + 'px') and (orientation: $orientation) {
+                                    @include css_property($property, $val);
+                                }
+                            } @else {
+                                @media only screen and (#{$media-direction}-width: $max_screen + 'px')  and (orientation: $orientation) {
+                                    @include css_property($property, $val);
+                                }
+                            }
+                        } @else {
+                            @if map-has-key($breakpoints, $max_screen) {
+                                @media only screen and (#{$media-direction}-width: map-get($breakpoints, $max_screen) + 'px') {
+                                    @include css_property($property, $val);
+                                }
+                            } @else {
+                                @media only screen and (#{$media-direction}-width: $max_screen + 'px') {
+                                    @include css_property($property, $val);
+                                }
+                            }
+                        }
+                    } @else {
+                        @if $orientation {
+                            @if map-has-key($breakpoints, $min_screen) and map-has-key($breakpoints, $max_screen) {
+                                @media only screen and (min-width: map-get($breakpoints, $min_screen) + "px") and (max-width: map-get($breakpoints, $max_screen) + "px") and (orientation: $orientation) {
+                                    @include css_property($property, $val);
+                                }
+                            } @else if map-has-key($breakpoints, $min_screen) and not map-has-key($breakpoints, $max_screen) {
+                                @media only screen and (min-width: map-get($breakpoints, $min_screen) + "px") and (max-width: $max_screen + "px") and (orientation: $orientation) {
+                                    @include css_property($property, $val);
+                                }
+                            } @else if not map-has-key($breakpoints, $min_screen) and map-has-key($breakpoints, $max_screen) {
+                                @media only screen and (min-width: $min_screen + "px") and (max-width: map-get($breakpoints, $max_screen) + "px") and (orientation: $orientation) {
+                                    @include css_property($property, $val);
+                                }
+                            } @else {
+                                @media only screen and (min-width: $min_screen + "px") and (max-width: $max_screen + "px") and (orientation: $orientation) {
+                                    @include css_property($property, $val);
+                                }
+                            }
+                        } @else {
+                            @if map-has-key($breakpoints, $min_screen) and map-has-key($breakpoints, $max_screen) {
+                                @media only screen and (min-width: map-get($breakpoints, $min_screen) + "px") and (max-width: map-get($breakpoints, $max_screen) + "px") {
+                                    @include css_property($property, $val);
+                                }
+                            } @else if map-has-key($breakpoints, $min_screen) and not map-has-key($breakpoints, $max_screen) {
+                                @media only screen and (min-width: map-get($breakpoints, $min_screen) + "px") and (max-width: $max_screen + "px") {
+                                    @include css_property($property, $val);
+                                }
+                            } @else if not map-has-key($breakpoints, $min_screen) and map-has-key($breakpoints, $max_screen) {
+                                @media only screen and (min-width: $min_screen + "px") and (max-width: map-get($breakpoints, $max_screen) + "px") {
+                                    @include css_property($property, $val);
+                                }
+                            } @else {
+                                @media only screen and (min-width: $min_screen + "px") and (max-width: $max_screen + "px") {
+                                    @include css_property($property, $val);
+                                }
+                            }
+                        }
+                    }
+                } @else {
+                    @if $screen == "print" {
+                        @media print {
+                            @include css_property($property, $val);
+                        }
+                    } @else {
+                        @if $orientation {
+                            @if map-has-key($breakpoints, $screen) {
+                                @media only screen and (#{$media-direction}-width: map-get($breakpoints, $screen) + 'px') and (orientation: $orientation) {
+                                    @include css_property($property, $val);
+                                }
+                            } @else {
+                                @if $screen == all {
+                                    @media only screen and (orientation: $orientation) {
+                                        @include css_property($property, $val);
+                                    }
+                                } @else {
+                                    @media only screen and (#{$media-direction}-width: $screen + 'px') and (orientation: $orientation) {
+                                        @include css_property($property, $val);
+                                    }
+                                }
+                            }
+                        } @else {
+                            @if map-has-key($breakpoints, $screen) {
+                                @media only screen and (#{$media-direction}-width: map-get($breakpoints, $screen) + 'px') {
+                                    @include css_property($property, $val);
+                                }
+                            } @else {
+                                @if $screen == all {
+                                    @include css_property($property, $val);
+                                } @else {
+                                    @media only screen and (#{$media-direction}-width: $screen + 'px') {
+                                        @include css_property($property, $val);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        } @else {
+            @if $property == "extend" {
+                @extend #{unquote($value)} !optional;
+            } @else {
+                @include css_property($property, $value);
+            }
+        }
+    }
+}

@@ -1,0 +1,126 @@
+doctype html
+//- html(class="no-js", lang="ru")
+html(lang="ru")
+
+    include ../components/head/head.pug
+    include ../components/header/header.pug
+    include ../components/footer/footer.pug 
+
+
+    head
+        +head(head.defaults)
+    body
+        |%=symbols=%
+
+        .page__wrapper
+            main.main
+                style.
+                    .page__wrapper {
+                        display:flex !important;
+                        flex-dicrection:column !important;
+                        align-items:flex-start !important;
+                        padding:50px !important;
+                    }
+                    html {
+                        background:#fff !important;
+                        color:#000 !important;
+                    }
+                    .rout {
+                        display:flex;
+                        flex-wrap:wrap;
+                        //- align-items:flex-start;
+                    }
+                    .rout a.page-link {
+                        font-size:20px;
+                        positin:relative;
+                        display:flex;
+                        align-items:center;
+                        padding:5px;
+                        border-bottom:1px solid #000;
+                        margin-left:5px;
+                        padding-bottom: 0px;
+                        padding-left:0px;
+                        line-height: 17px;
+                    }
+                    .rout a.page-link:hover {
+                     text-decoration:none;
+                     border-bottom:1px solid transparent;
+                    }
+                    .rout li {
+                        border:1px solid #6c86b454;
+                        margin:5px;
+                        background:rgba( 0,0,0,.1);
+                        padding-top:5px;
+                        display:flex;
+                        flex-direction:column;
+                        align-items:flex-start;
+
+                    }
+                    .rout li:hover {
+                        background:#fff;
+                    }
+                    .rout a.task-link {
+                        font-size:15px;
+                        positin:relative;
+                        display:flex;
+                        align-items:center;
+                        padding:5px;
+                        padding-bottom:0px;
+                        padding-left:0px;
+                        margin-left:5px;
+                        margin-bottom:10px;
+                        border-bottom:1px solid #000;
+                        line-height:15px;
+                    }
+                    .rout a.task-link:hover {
+                        border-bottom:1px solid transparent;
+                    }
+                    .rout a {
+                        position:relative;
+                        margin-bottom:10px;
+                        font-family: "Febas Neue";
+                        font-weight: bold;
+                    }
+                    .rout img {
+                      margin-top:auto;
+                    }
+                    .rout a:focus {
+                        box-shadow: 0px 0px 5px 0px blue;
+                    }
+
+                    
+                ul.rout
+                    li
+                        a(title="Открыть в новом окне" href="page-home.html" class="page-link") Главная 🔗
+                        img(src="https://pp.userapi.com/c850632/v850632713/b7f93/Upam_E0HMNs.jpg", alt="", width="300px" )
+                    li
+                        a(title="Открыть в новом окне" href="page-contacts.html" class="page-link") Контакты 🔗
+                        img(src="https://pp.userapi.com/c852224/v852224390/c2afb/wq8hMWQk0Z8.jpg", alt="", width="300px" )
+                    li
+                        a(title="Открыть в новом окне" href="page-about.html" class="page-link") О компании 🔗
+                        img(src="https://pp.userapi.com/c849124/v849124720/13e66d/QFWoBlqVm0U.jpg", alt="", width="300px" )
+                    li
+                        a(title="Открыть в новом окне" href="page-404.html" class="page-link") 404 🔗
+                        img(src="https://pp.userapi.com/c851036/v851036467/ccc56/AqQQz7cBBiU.jpg", alt="", width="300px" )
+                    li
+                        a(title="Открыть в новом окне" href="page-tech-doc.html" class="page-link") tech-doc 🔗
+                        img(src="https://pp.userapi.com/c851216/v851216978/d0070/LM7VY3XOlY8.jpg", alt="", width="300px" )
+                    li
+                        a(title="Открыть в новом окне" href="page-ideas.html" class="page-link") ideas 🔗
+                        img(src="https://pp.userapi.com/c850228/v850228779/f0bf9/odiDXlJ0-gw.jpg", alt="", width="300px" )
+                    li
+                        a(title="Открыть в новом окне" href="page-works.html" class="page-link") works 🔗
+                        img(src="https://pp.userapi.com/c846416/v846416654/1b62bb/jee5B8eb9Ls.jpg", alt="", width="300px" )
+                    li
+                        a(title="Открыть в новом окне" href="page-g-line.html" class="page-link") g-line 🔗
+                        img(src="https://pp.userapi.com/c851528/v851528560/c8d13/aFVQIgHx1uA.jpg", alt="", width="300px" )
+                    li
+                        a(title="Открыть в новом окне" href="page-basic-line.html" class="page-link") basic-line 🔗
+                        img(src="https://pp.userapi.com/c850736/v850736747/c86ad/IXWnI_ajdYE.jpg", alt="", width="300px" )
+                    li
+                        a(title="Открыть в новом окне" href="page-d-line.html" class="page-link") d-line 🔗
+                        img(src="https://pp.userapi.com/c844720/v844720882/1aa5f0/JUHHI-rYQAw.jpg", alt="", width="300px" )
+        //- script(src='%=static=%js/main%=hash=%%=min=%.js')
+
+
+        

@@ -1,0 +1,108 @@
+.ideas {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    &:before,
+    &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        z-index: -1;
+        pointer-events: none;
+    }
+    &:before {
+        width: 766px;
+        height: 633px;
+        right: 0px;
+        top: 0px;
+        background-image: url(../img/content/page-ideas/bg1.jpg);
+    }
+    &:after {
+        background-image: url(../img/general/icons/romb.svg);
+        width: 750px;
+        height: 750px;
+        bottom: 0;
+        right: -550px;
+    }
+    &__wrapper {
+        width: 100%;
+        max-width: 1440px;
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        box-sizing: border-box;
+        align-items: flex-start;
+        align-content: flex-start;
+        @include media(
+            (
+                padding: (
+                    all: 170px 200px 120px 75px,
+                    1366: 100px 90px 120px 30px,
+                    768: 100px 25px 120px 25px
+                )
+            )
+        );
+    }
+    &__title {
+        font-size: 80px;
+        font-weight: bold;
+        line-height: 0.94;
+        letter-spacing: 0.3px;
+        color: $sand;
+        margin-bottom: 90px;
+        @include bebasik();
+        width: 100%;
+        @include media(
+            (
+                font-size: (
+                    all: 80px,
+                    1366: 30px
+                ),
+                margin-bottom: (
+                    all: 90px,
+                    1366: 30px
+                )
+            )
+        );
+    }
+    &__item {
+        @include rotateImageStyle();
+    }
+    // @media screen and (min-width: 768px) {
+        & {
+            &:before {
+                opacity: 0;
+            }
+            & .ideas__wrapper {
+                opacity: 0;
+                transform: translateY(150px);
+            }
+            & .scroll-indicator {
+                opacity: 0;
+                transform: translateX(150px) translateY(-50%);
+            }
+            &.is-show {
+                &:before {
+                    opacity: 1;
+                    transition: opacity 0.6s ease-in-out;
+                }
+                .ideas__wrapper {
+                    opacity: 1;
+                    transform: translateY(0px);
+                    transition: transform 0.6s $timing 0.3s, opacity 0.6s ease-in-out 0.3s;
+                }
+                .scroll-indicator {
+                    opacity: 1;
+                    transform: translateX(0px) translateY(-50%);
+                    transition: transform 0.6s $timing 0.6s, opacity 0.6s ease-in-out 0.6s;
+                }
+            }
+        // }
+    }
+}

@@ -1,0 +1,25 @@
+mixin header()
+    header.header
+        nav.header__nav
+            a(href="/page-home.html" data-ajax-link).header__nav__logo
+                span.header__nav__logo__square
+                    span.header__nav__logo__square__el1
+                    span.header__nav__logo__square__el2
+                    span.header__nav__logo__square__el3
+                span.header__nav__logo__text ЕВРОПА-ЛИФТ
+                //- img(src="static/img/general/icons/header__nav__logo__img.svg", alt="Логотип", width="160px").header__nav__logo__img
+            ul.header__nav__list 
+                li.header__nav__list__item
+                    a(href="/page-about.html" data-ajax-link).header__nav__list__item__link О КОМПАНИИ
+                li.header__nav__list__item
+                    a(href="/page-works.html" data-ajax-link).header__nav__list__item__link НАШИ РАБОТЫ
+                li.header__nav__list__item
+                    a(href="/page-ideas.html" data-ajax-link).header__nav__list__item__link ИДЕИ ДЛЯ ЛИФТОВ
+                li.header__nav__list__item
+                    a(href="/page-contacts.html" data-ajax-link).header__nav__list__item__link КОНТАКТЫ
+        button.header__menu-button
+            .header__menu-button__caption 
+                span МЕНЮ
+                span ЗАКРЫТЬ МЕНЮ
+                span ЗАКРЫТЬ ФОРМУ
+            include ../../static/img/general/icons/menu__icon.svg 

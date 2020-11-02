@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 461.2 461.2">
+    <defs>
+        <style>
+            .logo-dark-bg {
+                fill: none;
+                stroke: #29272a;
+                stroke-width: 25px;
+            }
+        </style>
+    </defs>
+    <g id="wrapper">
+        <g id="group">
+            <rect class="logo-dark-bg" x="80.04" y="80.04" width="301.12" height="301.12" transform="translate(-95.52 230.6) rotate(-45)" />
+            <rect class="logo-dark-bg" x="111.75" y="155.71" width="237.71" height="237.71" transform="translate(-126.6 243.48) rotate(-45)" />
+            <rect class="logo-dark-bg" x="143.45" y="232.25" width="174.29" height="174.29" transform="translate(-158.31 256.61) rotate(-45)" />
+            <rect class="logo-dark-bg" x="172.89" y="303.33" width="115.41" height="115.41" transform="translate(-187.75 268.8) rotate(-45)" />
+        </g>
+    </g>
+</svg>

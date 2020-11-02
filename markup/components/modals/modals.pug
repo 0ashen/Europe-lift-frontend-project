@@ -1,0 +1,120 @@
+include ../footer/footer.pug
+mixin modals()
+    //- .modal.callback.is-open.is-disable-delay.is-form-open.is-tnx(style='visibility: visible')
+    .modal.callback
+        .callback__sand-bg
+        nav.callback__menu
+            ul.callback__menu__list
+                li.callback__menu__item
+                    a(href="/page-about.html" data-ajax-link style="-webkit-clip-path: url(#m1); clip-path: url(#m1)").callback__menu__item__link
+                        p О КОМПАНИИ
+
+                li.callback__menu__item
+                    a(href="/page-basic-line.html" data-ajax-link style="-webkit-clip-path: url(#m2_1); clip-path: url(#m2_1)").callback__menu__item__link
+                        p BASIC / 
+                    a(href="/page-d-line.html" data-ajax-link style="-webkit-clip-path: url(#m2_2); clip-path: url(#m2_2)").callback__menu__item__link
+                        p DESIGN / 
+                    a(href="/page-g-line.html" data-ajax-link style="-webkit-clip-path: url(#m2_3); clip-path: url(#m2_3)").callback__menu__item__link
+                        p GLASS
+                li.callback__menu__item
+                    a(href="/page-works.html" data-ajax-link style="-webkit-clip-path: url(#m3); clip-path: url(#m3)").callback__menu__item__link
+                        p НАШИ РАБОТЫ
+                li.callback__menu__item
+                    a(href="/page-ideas.html" data-ajax-link style="-webkit-clip-path: url(#m4); clip-path: url(#m4)").callback__menu__item__link
+                        p ИДЕИ ДЛЯ ЛИФТОВ
+                li.callback__menu__item
+                    a(href="/page-tech-doc.html" data-ajax-link style="-webkit-clip-path: url(#m5); clip-path: url(#m5)").callback__menu__item__link
+                        p ТЕХНИЧЕСКАЯ ДОКУМЕНТАЦИЯ
+                li.callback__menu__item
+                    a(href="/page-contacts.html" data-ajax-link style="-webkit-clip-path: url(#m6); clip-path: url(#m6)").callback__menu__item__link
+                        p КОНТАКТЫ
+                    //- Снизу маски, сверху элементы которым эта маска нужна, у маски есть ID, этот ID нужно вставить в подходящее меню выше
+                    //- Тег p нужен только для того чтобы занять место под меню, этот тег просто с opacity:0 висит
+                    //- Т.е. маску с id="m1" нужно поавить в первый элемент списка, в ссылку с текстом "О компании"
+                    svg(height="0" width="0")
+                        defs
+                            clipPath(id="m1")
+                                text(x="0") О КОМПАНИИ
+                            clipPath(id="m2_1")
+                                text(x="0") BASIC /
+                            clipPath(id="m2_2")
+                                text(x="0") DESIGN /
+                            clipPath(id="m2_3")
+                                text(x="0") GLASS
+                            clipPath(id="m3")
+                                text(x="0") НАШИ РАБОТЫ
+                            clipPath(id="m4")
+                                text(x="0") ИДЕИ ДЛЯ ЛИФТОВ
+                            clipPath(id="m5")
+                                text(x="0") ТЕХНИЧЕСКАЯ ДОКУМЕНТАЦИЯ
+                            clipPath(id="m6")
+                                text(x="0") КОНТАКТЫ
+        .callback__bot
+            button.callback__bot__callback-button.guid__btn--t2
+                span ОТПРАВИТЬ ЗАПРОС
+        +footer('is-callback-footer')
+    .modal.send-form
+        form(action="").send-form__body
+            .send-form__title ЗАПОЛНИТЕ ФОРМУ
+            .send-form__caption И МЫ ВАМ ПЕРЕЗВОНИМ В БЛИЖАЙШЕЕ ВРЕМЯ
+            .send-form__caption-small КОНЕЧНО, ЕСЛИ СЕГОДНЯ НЕ ВЫХОДНОЙ =)
+            label.send-form__label
+                input(type="text", placeholder="ВАШЕ ИМЯ", name="name" required onkeyup="this.setAttribute('value', this.value);", value="").send-form__label__input
+            label.send-form__label
+                input(type="tel", placeholder="ТЕЛЕФОН", name="phone" required  value="" onkeyup="this.setAttribute('value', this.value);").send-form__label__input
+            label.send-form__consent
+                input(type="checkbox" required name="rules").send-form__consent__input
+                span.send-form__consent__caption Я соглашаюсь на обработку данных в соответствии с действующим законодательством о конфиденциальности
+            button(disabled).send-form__button.guid__btn--t3
+                span ОТПРАВИТЬ
+        .send-form__tnx
+            .send-form__tnx__title СПАСИБО!
+            .send-form__tnx__t1 МЫ ВАМ ПЕРЕЗВОНИМ В БЛИЖАЙШЕЕ ВРЕМЯ
+            .send-form__tnx__t2 КОНЕЧНО, ЕСЛИ СЕГОДНЯ НЕ ВЫХОДНОЙ =)
+            include ../../static/img/general/icons/like.svg
+    .modal.slider
+        .slider__wrapper
+            button.slider__close
+            .slider__title Лифт в доме на лубянке
+            .slider__top
+                .slider__top__item
+                    .slider__top__item__img(data-background-image="static/img/content/page-ideas/img1.jpg")
+                .slider__top__item
+                    .slider__top__item__img(data-background-image="static/img/content/page-ideas/img1.jpg")
+                .slider__top__item
+                    .slider__top__item__img(data-background-image="static/img/content/page-ideas/img1.jpg")
+                .slider__top__item
+                    .slider__top__item__img(data-background-image="static/img/content/page-ideas/img1.jpg")
+                .slider__top__item
+                    .slider__top__item__img(data-background-image="static/img/content/page-ideas/img1.jpg")
+                .slider__top__item
+                    .slider__top__item__img(data-background-image="static/img/content/page-ideas/img1.jpg")
+                .slider__top__item
+                    .slider__top__item__img(data-background-image="static/img/content/page-ideas/img1.jpg")
+                .slider__top__item
+                    .slider__top__item__img(data-background-image="static/img/content/page-ideas/img1.jpg")
+                .slider__top__item
+                    .slider__top__item__img(data-background-image="static/img/content/page-ideas/img1.jpg")
+                .slider__top__item
+                    .slider__top__item__img(data-background-image="static/img/content/page-ideas/img1.jpg")
+            .slider__bot
+                .slider__bot__item
+                    .slider__bot__item__img(data-background-image="static/img/content/page-ideas/img1.jpg")
+                .slider__bot__item
+                    .slider__bot__item__img(data-background-image="static/img/content/page-ideas/img1.jpg")
+                .slider__bot__item
+                    .slider__bot__item__img(data-background-image="static/img/content/page-ideas/img1.jpg")
+                .slider__bot__item
+                    .slider__bot__item__img(data-background-image="static/img/content/page-ideas/img1.jpg")
+                .slider__bot__item
+                    .slider__bot__item__img(data-background-image="static/img/content/page-ideas/img1.jpg")
+                .slider__bot__item
+                    .slider__bot__item__img(data-background-image="static/img/content/page-ideas/img1.jpg")
+                .slider__bot__item
+                    .slider__bot__item__img(data-background-image="static/img/content/page-ideas/img1.jpg")
+                .slider__bot__item
+                    .slider__bot__item__img(data-background-image="static/img/content/page-ideas/img1.jpg")
+                .slider__bot__item
+                    .slider__bot__item__img(data-background-image="static/img/content/page-ideas/img1.jpg")
+                .slider__bot__item
+                    .slider__bot__item__img(data-background-image="static/img/content/page-ideas/img1.jpg")

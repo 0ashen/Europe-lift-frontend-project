@@ -1,0 +1,218 @@
+// GUI stylies of the project
+// For example, styles of the links, buttons and so on.
+.modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: $bg-dark;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    &.is-open {
+        opacity: 1;
+        pointer-events: all;
+    }
+}
+
+.guid {
+    &__btn {
+        $btn_skew: transform 1s cubic-bezier(0, 0.98, 0.99, 1);
+        &--t1 {
+            @include bebasik();
+            border: 1px solid $coffee;
+            color: #fff;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 1.2px;
+            line-height: 1;
+            padding: 18px 92px 17px;
+            overflow: hidden;
+            box-sizing: border-box;
+            display: block;
+            position: relative;
+
+            &:before,
+            &:after {
+                content: "";
+                display: block;
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0px;
+                background: $coffee;
+                transition: $btn_skew;
+            }
+            &:after {
+                transform: skewX(-40deg) translateX(65%);
+                left: 50%;
+            }
+            &:before {
+                transform: skewX(-40deg) translateX(-65%);
+                right: 50%;
+            }
+
+            span {
+                position: relative;
+                z-index: 1;
+                pointer-events:none;
+            }
+            &:hover {
+                &:before {
+                    transform: skewX(-40deg) translateX(5%);
+                }
+                &:after {
+                    transform: skewX(-40deg) translateX(-5%);
+                }
+            }
+        }
+        &--t2 {
+            border: 1px solid $bg-dark;
+            color: $bg-dark;
+            @include bebasik();
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 1.2px;
+            line-height: 1;
+            padding: 18px 73px 17px;
+            overflow: hidden;
+            box-sizing: border-box;
+            position: relative;
+            flex-shrink: 0;
+
+            &:before,
+            &:after {
+                content: "";
+                display: block;
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0px;
+                background: $coffee;
+                transition: $btn_skew;
+            }
+            &:after {
+                transform: skewX(-40deg) translateX(60%);
+                left: 50%;
+            }
+            &:before {
+                transform: skewX(-40deg) translateX(-60%);
+                right: 50%;
+            }
+            span {
+                position: relative;
+                z-index: 1;
+                pointer-events:none;
+            }
+            &:hover {
+                color: #fff;
+                border-color: $coffee;
+                &:before {
+                    transform: skewX(-40deg) translateX(5%);
+                }
+                &:after {
+                    transform: skewX(-40deg) translateX(-5%);
+                }
+            }
+        }
+        &--t3 {
+            border: 1px solid $coffee;
+            color: $coffee;
+            @include bebasik();
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 1.2px;
+            line-height: 1;
+            padding: 18px 73px 17px;
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            max-width: 375px;
+            z-index: 1;
+            transform: translate3d(0, 0, 0);
+            box-sizing: border-box;
+            transition: color 0.4s $timing, border-color 0.4s $timing;
+            &:before,
+            &:after {
+                content: "";
+                display: block;
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0px;
+                background: $coffee;
+                z-index: -1;
+                transition: transform 0.25s;
+            }
+            &:after {
+                transform: skewX(-40deg) translateX(60%);
+                left: 50%;
+            }
+            &:before {
+                transform: skewX(-40deg) translateX(-60%);
+                right: 50%;
+            }
+            &:hover {
+                color: #fff;
+                border-color: $coffee;
+                will-change: transform;
+                &:before {
+                    transform: skewX(-40deg) translateX(5%);
+                }
+                &:after {
+                    transform: skewX(-40deg) translateX(-5%);
+                }
+            }
+        }
+    }
+}
+
+.scroll-indicator {
+    position: fixed;
+    right: 90px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 2px;
+    height: 50%;
+    background-color: #514530;
+    z-index: 1;
+    @include media((
+        right: (
+            all: 90px,
+            1366: 30px
+        ),
+        display: (
+            768: none
+        )
+    ));
+    &:before {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 56px;
+        background-color: #514530;
+        position: absolute;
+        bottom: 100%;
+    }
+    &:after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 56px;
+        background-color: #514530;
+        position: absolute;
+        top: 100%;
+    }
+    &__caret {
+        position: absolute;
+        top: 50%;
+        height: 113px;
+        background: $sand;
+        width: 100%;
+        transform: translateY(-50%);
+        z-index: 1;
+    }
+}

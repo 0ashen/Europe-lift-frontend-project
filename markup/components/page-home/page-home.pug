@@ -1,0 +1,45 @@
+mixin page-home()
+    main.home
+        .home__back-slider
+            .home__back-slider__item.is-current
+                .home__back-slider__item__bg(data-background-image-without-mobille-768="static/img/content/page-home/slide_3__bg.jpg")
+                .home__back-slider__item__square
+            .home__back-slider__item
+                .home__back-slider__item__bg(data-background-image-without-mobille-768="static/img/content/page-home/slide_1__bg.jpg")
+                .home__back-slider__item__square
+            .home__back-slider__item
+                .home__back-slider__item__bg(data-background-image-without-mobille-768="static/img/content/page-home/slide_2__bg.jpg")
+                .home__back-slider__item__square
+        .home__front-slider
+            .home__front-slider__item.is-current
+                .home__front-slider__item__img(data-background-image="static/img/content/page-home/slide_3.jpg")
+            .home__front-slider__item
+                .home__front-slider__item__img(data-background-image="static/img/content/page-home/slide_1.jpg")
+            .home__front-slider__item
+                .home__front-slider__item__img(data-background-image="static/img/content/page-home/slide_2.jpg")
+        .home__caption
+            .home__caption__series СЕРИЯ
+            .home__caption__thin
+                .home__caption__thin__item.is-current BASIC
+                .home__caption__thin__item GLASS
+                .home__caption__thin__item DESIGN
+            .home__caption__bold
+                .home__caption__bold__item.is-current LINE
+                .home__caption__bold__item LINE
+                .home__caption__bold__item LINE
+            .home__caption__description
+                .home__caption__description__item.is-current Лифты для коттеджей<br>с типовой отделкой
+                .home__caption__description__item Стеклянные лифты<br>для коттеджей 
+                .home__caption__description__item Лифты для коттеджей<br>с индивидуальной отделкой 
+            a(href="/page-basic-line.html" data-ajax-link).home__caption__link.guid__btn--t1 
+                span Подробнее
+        .home__counter
+            button.home__counter__item.is-mid(data-num="1") 
+                span 01
+            button.home__counter__item.is-bot(data-num="2") 
+                span 02
+            button.home__counter__item.is-top(data-num="3") 
+                span 03
+        .home__arrows
+            button.home__arrows__top
+            button.home__arrows__bot

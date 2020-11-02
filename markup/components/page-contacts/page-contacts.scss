@@ -1,0 +1,422 @@
+.contacts {
+    width: 100%;
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    @include media(
+        (
+            padding-top: (
+                all: 95px,
+                768: 10px
+            ),
+            padding-bottom: (
+                all: 100px,
+                768: 0px
+            ),
+            margin: (
+                all: auto 0px,
+                768: 90px 0px 0px
+            ),
+            overflow: (
+                all: hidden,
+                768: visible
+            ),
+            flex-direction: (
+                768: column
+            )
+        )
+    );
+    &__map {
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        background: rgb(32, 32, 32);
+        & > * {
+            background: rgb(32, 32, 32) !important;
+        }
+        @include media(
+            (
+                position: (
+                    all: absolute,
+                    768: static
+                ),
+                order: (
+                    768: 1
+                ),
+                height: (
+                    768: 700px
+                )
+            )
+        );
+
+        .gmnoprint,
+        .gm-style-cc,
+        .gm-control-active,
+        .gm-fullscreen-control {
+            display: none;
+        }
+        * {
+            cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26 26" width="26" height="26"><g id="wrapper"><g id="group"><path id="internal" fill="%23e4b769" d="M10.16,13,13,10.16,15.84,13,13,15.84Z" /><path id="mid" fill="%23e4b769" d="M15.13,13,13,10.87,10.87,13,13,15.13,15.13,13m1.41,0L13,16.55,9.45,13,13,9.46Z" /><path id="external" fill="%23e4b769" d="M24.59,13,13,1.41,1.41,13,13,24.59,24.59,13M26,13,13,26,0,13,13,0Z" /></g></g></svg>') 13 13,
+                default;
+        }
+        &:after {
+            content: "";
+            display: block;
+            height: 100%;
+            width: 100%;
+            border-radius: 9px;
+            box-shadow: 0 0 10px 0 $sand;
+            background-color: $sand;
+            position: absolute;
+            top: 0px;
+            @include media(
+                (
+                    transform: (
+                        all: skewX(-18deg) translateX(16%),
+                        768: translateX(0%) translateY(-50%) skewY(11deg)
+                    ),
+                    left: (
+                        all: 75%,
+                        768: 0%
+                    ),
+                    top: (
+                        768: 100%
+                    ),
+                    width: (
+                        768: 100%
+                    ),
+                    height: (
+                        768: 200px
+                    ),
+                    border-radius: (
+                        768: 0px
+                    ),
+                    display: (
+                        all: none,
+                        768: block
+                    )
+                )
+            );
+        }
+    }
+    &__body {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+
+        color: $bg-dark;
+        box-sizing: border-box;
+        @include cursorBlack();
+        display: flex;
+        flex-direction: column;
+        pointer-events: none;
+
+        @include media(
+            (
+                padding: (
+                    all: 26px 0px 45px 77px,
+                    1280: 26px 0px 45px 35px,
+                    768: 20px 40px 0px 40px
+                ),
+                align-items: (
+                    all: flex-start,
+                    768: center
+                ),
+                box-shadow: (
+                    768: 0 0 10px 0 $sand
+                ),
+                background-color: (
+                    768: $sand
+                ),
+                pointer-events: (
+                    all: none,
+                    768: all
+                ),
+                position: (
+                    768: relative
+                ),
+                min-height: (
+                    all: 530px,
+                    768: 0px
+                )
+            )
+        );
+        & * {
+            pointer-events: all;
+            z-index: 1;
+        }
+        &:before,
+        &:after {
+            content: "";
+            display: block;
+            height: 100%;
+            width: 100%;
+            border-radius: 9px;
+            box-shadow: 0 0 10px 0 $sand;
+            background-color: $sand;
+            position: absolute;
+            top: 0px;
+            cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26 26" width="26" height="26"><g id="wrapper"><g id="group"><path id="internal" fill="%23222023" d="M10.16,13,13,10.16,15.84,13,13,15.84Z" /><path id="mid" fill="%23222023" d="M15.13,13,13,10.87,10.87,13,13,15.13,15.13,13m1.41,0L13,16.55,9.45,13,13,9.46Z" /><path id="external" fill="%23222023" d="M24.59,13,13,1.41,1.41,13,13,24.59,24.59,13M26,13,13,26,0,13,13,0Z" /></g></g></svg>') 13 13,
+                default;
+            pointer-events: all;
+        }
+        &:before {
+            right: 25%;
+            transform: skewX(-18deg) translateX(-28%);
+            @include media(
+                (
+                    display: (
+                        768: none
+                    )
+                )
+            );
+        }
+        &:after {
+            @include media(
+                (
+                    transform: (
+                        all: skewX(-18deg) translateX(16%),
+                        768: translateX(0%) translateY(-50%) skewY(11deg)
+                    ),
+                    left: (
+                        all: 75%,
+                        768: 0%
+                    ),
+                    top: (
+                        768: 100%
+                    ),
+                    width: (
+                        768: 100%
+                    ),
+                    height: (
+                        768: 200px
+                    ),
+                    border-radius: (
+                        768: 0px
+                    )
+                )
+            );
+        }
+
+        &__title {
+            font-weight: bold;
+            letter-spacing: 0.2px;
+            @include bebasik();
+            @include media(
+                (
+                    font-size: (
+                        all: 50px,
+                        768: 25px
+                    ),
+                    line-height: (
+                        all: 1.38,
+                        768: 1.2
+                    ),
+                    margin-bottom: (
+                        768: 3px
+                    )
+                )
+            );
+        }
+        &__caption {
+            max-width: 560px;
+            font-weight: 500;
+            @include media(
+                (
+                    max-width: (
+                        1280: 48%,
+                        768: 100%
+                    ),
+                    font-size: (
+                        all: 16px,
+                        768: 14px
+                    ),
+                    line-height: (
+                        all: 1.75,
+                        768: 2
+                    ),
+                    text-align: (
+                        768: center
+                    ),
+                    margin-bottom: (
+                        all: 21px,
+                        768: 16px
+                    )
+                )
+            );
+        }
+        &__adress {
+            max-width: 340px;
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 13px;
+            @include media(
+                (
+                    max-width: (
+                        1280: 42%,
+                        768: 100%
+                    ),
+                    flex-direction: (
+                        1280: column
+                    )
+                )
+            );
+            &__title {
+                @include bebasik();
+                font-weight: bold;
+                margin-bottom: 20px;
+                width: 100%;
+                @include media(
+                    (
+                        font-size: (
+                            all: 24px,
+                            768: 15px
+                        ),
+                        line-height: (
+                            all: 1.42,
+                            768: 1.6
+                        ),
+                        letter-spacing: (
+                            all: 0.1px,
+                            768: 0.6px
+                        ),
+                        text-align: (
+                            768: center
+                        )
+                    )
+                );
+            }
+            &__item {
+                margin-bottom: 16px;
+                &__caption {
+                    font-weight: 500;
+                    letter-spacing: 0.1px;
+                    margin-bottom: 7px;
+                    @include media(
+                        (
+                            text-align: (
+                                768: center
+                            ),
+                            font-size: (
+                                all: 14px,
+                                768: 12px
+                            )
+                        )
+                    );
+                }
+                &__text {
+                    line-height: 1.75;
+                    letter-spacing: 0.1px;
+                    @include media(
+                        (
+                            font-size: (
+                                all: 16px,
+                                768: 12px
+                            ),
+                            font-weight: (
+                                all: 900
+                            ),
+                            text-align: (
+                                768: center
+                            ),
+                            width: (
+                                768: 100%
+                            ),
+                            display: (
+                                768: block
+                            )
+                        )
+                    );
+                    &[href^="mailto:"] {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+        &__send-request {
+            @include media(
+                (
+                    padding-left: (
+                        1280: 50px
+                    ),
+                    padding-right: (
+                        1280: 50px
+                    )
+                )
+            );
+        }
+    }
+}
+/// animations
+@media screen and (min-width: 769px) {
+    // google map marker
+    .gm-style > div:first-child > div:first-child img[src="static/img/general/icons/map__logo.svg"] {
+        transform: scale(0.1);
+        opacity: 0;
+        .contacts.is-show & {
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
+    .contacts.is-show .gm-style > div:first-child > div:first-child img[src="static/img/general/icons/map__logo.svg"] {
+        transition: transform 0.7s cubic-bezier(0, 0.9, 0, 1.2) 2.5s, opacity 0.7s $timing 2.5s;
+        transform-origin: 50% 100%;
+    }
+    // sand bg
+    .contacts__body:before {
+        transform: skewX(-18deg) translateX(6px);
+        .contacts.is-show & {
+            transform: skewX(-18deg) translateX(-28%);
+        }
+    }
+    .contacts__body:after {
+        transform: skewX(-18deg) translateX(-6px);
+        .contacts.is-show & {
+            transform: skewX(-18deg) translateX(16%);
+        }
+    }
+    .contacts.is-show {
+        .contacts__body:before,
+        .contacts__body:after {
+            transition: transform 1.5s cubic-bezier(0.42, 0, 0.17, 1.01) 1s;
+        }
+    }
+    // TEXT
+    .c-anim- {
+        &1,
+        &2,
+        &3,
+        &4,
+        &5,
+        &6 {
+            transform: translateY(50px);
+            opacity: 0;
+            .contacts.is-show & {
+                transition: transform 1s cubic-bezier(0.42, 0, 0.17, 1.01), opacity 1s cubic-bezier(0.42, 0, 0.17, 1.01);
+                transform: translateY(0px);
+                opacity: 1;
+            }
+        }
+    }
+    .contacts.is-show .c-anim- {
+        &2 {
+            transition-delay: 0.1s;
+        }
+        &3 {
+            transition-delay: 0.15s;
+        }
+        &4 {
+            transition-delay: 0.2s;
+        }
+        &5 {
+            transition-delay: 0.25s;
+        }
+        &6 {
+            transition-delay: 0.3s;
+        }
+    }
+}

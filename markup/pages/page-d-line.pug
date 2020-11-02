@@ -1,0 +1,22 @@
+doctype html
+html(lang="ru")
+
+    include ../components/head/head.pug
+    include ../components/header/header.pug
+    include ../components/footer/footer.pug
+    include ../components/modals/modals.pug
+    include ../components/loadSpinner/loadSpinner.pug
+
+    include ../components/page-d-line/page-d-line.pug
+    head
+        +head(head.defaults)
+    body
+        |%=symbols=%
+        .page__wrapper
+            +page-d-line()
+            +header()
+            +footer()
+            +modals()
+            +loadSpinner()
+        //- Main scripts. You can replace it, but I recommend you to leave it here
+        script(src='%=static=%js/main%=hash=%%=min=%.js')

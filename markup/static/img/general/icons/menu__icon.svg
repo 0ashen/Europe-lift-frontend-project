@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" class="header__menu-button__icon">
+    <g id="wrapper">
+        <g id="group">
+            <rect data-name="1" class="header__menu-button__icon__dot" width="3.79" height="3.79" />
+            <rect data-name="2" class="header__menu-button__icon__dot" x="10.11" width="3.79" height="3.79" />
+            <rect data-name="3" class="header__menu-button__icon__dot" x="20.21" width="3.79" height="3.79" />
+            <rect data-name="4" class="header__menu-button__icon__dot" y="10.1" width="3.79" height="3.79" />
+            <rect data-name="5" class="header__menu-button__icon__dot" x="10.11" y="10.1" width="3.79" height="3.79" />
+            <rect data-name="6" class="header__menu-button__icon__dot" x="20.21" y="10.1" width="3.79" height="3.79" />
+            <rect data-name="7" class="header__menu-button__icon__dot" y="20.21" width="3.79" height="3.79" />
+            <rect data-name="8" class="header__menu-button__icon__dot" x="10.11" y="20.21" width="3.79" height="3.79" />
+        </g>
+    </g>
+</svg>
