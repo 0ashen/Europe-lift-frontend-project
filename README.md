@@ -1,2 +1,2 @@
 # Europe-lift-frontend-tars-project
- https://europalift.ru/ 2018 year
+ https://europalift.ru/ work on project in 2018
